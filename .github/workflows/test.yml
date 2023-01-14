@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu
     steps:
       - name: Get the code
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: Test the code
-      - uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '7.0.x'
-      - run: dotnet test
+        run: dotnet test
