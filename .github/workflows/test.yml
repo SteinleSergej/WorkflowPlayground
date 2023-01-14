@@ -8,6 +8,5 @@ jobs:
       - name: Get the code
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: |
-            7.0.x
+          dotnet-version: '7.0.x'
       - run: dotnet test
