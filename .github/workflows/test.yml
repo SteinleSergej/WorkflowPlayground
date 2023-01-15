@@ -1,4 +1,4 @@
-﻿name: Test Project Userservice
+name: Test Project Userservice
 on: push
 jobs:
   test:
@@ -6,6 +6,12 @@ jobs:
     steps:
       - name: Get the code
         uses: actions/checkout@v3
+      - name: Docker SigIn
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: Get the sdk
         uses: actions/setup-dotnet@v3
         with:
@@ -14,3 +20,5 @@ jobs:
         run: dotnet test
       - name: Build Dockerfile
         run: docker build ./UserService -t userservice .
+      - name: Push to Docker
+        run: docker push userservice
