@@ -13,4 +13,4 @@ jobs:
       - name: Run Test
         run: dotnet test
       - name: Build Dockerfile
-        run: docker build ./UserService -t userservice
+        run: docker build ./UserService -t userservice .
