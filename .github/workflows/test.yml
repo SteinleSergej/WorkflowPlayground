@@ -18,6 +18,6 @@ jobs:
       - name: Run Test
         run: dotnet test
       - name: Build Dockerfile
-        run: docker build ./UserService -t userservice .
+        run: docker build -t ./UserService  steinlesergej/userservice .
       - name: Push to Docker
-        run: docker push userservice
+        run: docker push steinlesergej/userservice
