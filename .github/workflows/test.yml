@@ -9,8 +9,8 @@ jobs:
       - name: Docker SigIn
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER.DOCKER_USER }}
-          password: ${{ secrets.DOCKER.DOCKER_PASSWORD }}
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Get the sdk
         uses: actions/setup-dotnet@v3
         with:
